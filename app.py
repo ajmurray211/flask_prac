@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, request, redirect, url_for
 from flask_pymongo import PyMongo
+from flask_cors import CORS, cross_origin
 
 app= Flask(__name__)
+cors = CORS(app)
 # app.config['MONGO_URI'] = 'mongodb+srv://admin123:0000@cluster0.vzqog5g.mongodb.net/flask_prac?retryWrites=true&w=majority'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/flask_prac'
+app.config['CORS_Headers'] = 'Content-Type'
 
 mongo = PyMongo(app)
 
@@ -16,6 +19,7 @@ def getAll():
     return jsonify(holder)
 
 @app.route('/<name>', methods = ['GET'])
+@cross_origin()
 def getByName(name):
     currentCollection = mongo.db.flask_prac
     data = currentCollection.find_one({'name': name})
