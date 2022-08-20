@@ -17,14 +17,16 @@
     <nav class="navbar navbar-dark bg-dark">
         Flask & Mongo practice
     </nav>
+    <hr>
     <div class="container">
-        <button class="btn btn-dark" data-bs-toggle="collapse" href="#retrieveForm" role="button" aria-expanded="false"
+        <a class="btn btn-dark" data-bs-toggle="collapse" href="#retrieveForm" role="button" aria-expanded="false"
             aria-controls="retrieveForm">
             Get data using name
-        </button>
+        </a>
+        <br>
         <div class="collapse" id="retrieveForm">
             <br>
-            <form class="for-group" id="form-data">
+            <form class="for-group" id="formData">
                 <label for="name">Enter Name</label>
                 <br>
                 <input type="text" name="name" id="name" class="form-control">
@@ -32,6 +34,30 @@
                 <button class="btn btn-dark" type="submit"> Submit </button>
             </form>
         </div>
+        <br>
+        <ul class="list-group" id="output"></ul>
+    </div>
+
+    <div class="container">
+        <a class="btn btn-dark" data-bs-toggle="collapse" href="#postCollapse" role="button" aria-expanded="false"
+            aria-controls="postCollapse">
+            Post data
+        </a>
+        <br>
+        <div class="collapse" id="postCollapse">
+            <br>
+            <form class="for-group" id="postData">
+                <label for="name">Enter Name</label>
+                <input type="text" name="name" id="postName" class="form-control">
+                <label for="genre">Enter favorite music genre</label>
+                <input type="text" name="genre" id="postGenre" class="form-control">
+                <label for="game">Enter favorite game</label>
+                <input type="text" name="game" id="postGame" class="form-control">
+                <button class="btn btn-dark" type="submit"> Submit </button>
+            </form>
+        </div>
+        <br>
+        <div id="postResponse"></div>
     </div>
 
     <script src="script.js"></script>

@@ -26,6 +26,7 @@ def getByName(name):
     return jsonify({'name':data['name'], 'genre': data['favGenre'], 'game': data['favGame']})
 
 @app.route('/postData', methods = ['POST'])
+@cross_origin()
 def postData():
     currentCollection = mongo.db.flask_prac
     name = request.json['name']
